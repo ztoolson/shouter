@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   root 'homes#show'
 
   resource :dashboard, only: [:show]
-  resources :shouts, only: [:create]
+  resources :shouts, only: [:create, :show]
 
   # Routes added my monban
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 
 
 
