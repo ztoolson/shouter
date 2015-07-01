@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :shouts, only: [:show]
   resources :text_shouts, only: [:create]
   resources :photo_shouts, only: [:create]
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    post 'follow' => 'following_relationships#create'
+  end
 end
